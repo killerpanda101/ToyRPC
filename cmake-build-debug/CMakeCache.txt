@@ -140,7 +140,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=HelloWorld
+CMAKE_PROJECT_NAME:STATIC=ToyRPC
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ranlib
@@ -212,6 +212,24 @@ HelloWorld_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 HelloWorld_SOURCE_DIR:STATIC=/Users/parijatchatterjee/Desktop/ToyRPC
+
+//Value Computed by CMake
+ToyRPC_BINARY_DIR:STATIC=/Users/parijatchatterjee/Desktop/ToyRPC/cmake-build-debug
+
+//Value Computed by CMake
+ToyRPC_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+ToyRPC_SOURCE_DIR:STATIC=/Users/parijatchatterjee/Desktop/ToyRPC
+
+//Value Computed by CMake
+Toy_BINARY_DIR:STATIC=/Users/parijatchatterjee/Desktop/ToyRPC/cmake-build-debug
+
+//Value Computed by CMake
+Toy_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Toy_SOURCE_DIR:STATIC=/Users/parijatchatterjee/Desktop/ToyRPC
 
 
 ########################

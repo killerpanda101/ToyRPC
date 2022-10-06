@@ -8,7 +8,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: HelloWorld
+# Project: ToyRPC
 # Configurations: Debug
 # =============================================================================
 
@@ -37,6 +37,80 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = /Users/parijatchatterjee/Desktop/ToyRPC/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target TestClient
+
+
+#############################################
+# Order-only phony target for TestClient
+
+build cmake_object_order_depends_target_TestClient: phony || CMakeFiles/TestClient.dir
+
+build CMakeFiles/TestClient.dir/Networking/TestClient.cpp.o: CXX_COMPILER__TestClient_Debug /Users/parijatchatterjee/Desktop/ToyRPC/Networking/TestClient.cpp || cmake_object_order_depends_target_TestClient
+  DEP_FILE = CMakeFiles/TestClient.dir/Networking/TestClient.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/TestClient.dir
+  OBJECT_FILE_DIR = CMakeFiles/TestClient.dir/Networking
+
+build CMakeFiles/TestClient.dir/Networking/ClientTCP.cpp.o: CXX_COMPILER__TestClient_Debug /Users/parijatchatterjee/Desktop/ToyRPC/Networking/ClientTCP.cpp || cmake_object_order_depends_target_TestClient
+  DEP_FILE = CMakeFiles/TestClient.dir/Networking/ClientTCP.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/TestClient.dir
+  OBJECT_FILE_DIR = CMakeFiles/TestClient.dir/Networking
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target TestClient
+
+
+#############################################
+# Link the executable TestClient
+
+build TestClient: CXX_EXECUTABLE_LINKER__TestClient_Debug CMakeFiles/TestClient.dir/Networking/TestClient.cpp.o CMakeFiles/TestClient.dir/Networking/ClientTCP.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/TestClient.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = TestClient
+  TARGET_PDB = TestClient.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target TestServer
+
+
+#############################################
+# Order-only phony target for TestServer
+
+build cmake_object_order_depends_target_TestServer: phony || CMakeFiles/TestServer.dir
+
+build CMakeFiles/TestServer.dir/Networking/TestServer.cpp.o: CXX_COMPILER__TestServer_Debug /Users/parijatchatterjee/Desktop/ToyRPC/Networking/TestServer.cpp || cmake_object_order_depends_target_TestServer
+  DEP_FILE = CMakeFiles/TestServer.dir/Networking/TestServer.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/TestServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/TestServer.dir/Networking
+
+build CMakeFiles/TestServer.dir/Networking/ServerTCP.cpp.o: CXX_COMPILER__TestServer_Debug /Users/parijatchatterjee/Desktop/ToyRPC/Networking/ServerTCP.cpp || cmake_object_order_depends_target_TestServer
+  DEP_FILE = CMakeFiles/TestServer.dir/Networking/ServerTCP.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/TestServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/TestServer.dir/Networking
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target TestServer
+
+
+#############################################
+# Link the executable TestServer
+
+build TestServer: CXX_EXECUTABLE_LINKER__TestServer_Debug CMakeFiles/TestServer.dir/Networking/TestServer.cpp.o CMakeFiles/TestServer.dir/Networking/ServerTCP.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/TestServer.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = TestServer
+  TARGET_PDB = TestServer.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -71,7 +145,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/parijatchatterjee/Desktop/ToyRPC/cmake-build-debug
 
-build all: phony
+build all: phony TestClient TestServer
 
 # =============================================================================
 # Built-in targets

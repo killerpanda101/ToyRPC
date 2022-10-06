@@ -795,7 +795,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "HelloWorld"
+			"value" : "ToyRPC"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1103,6 +1103,78 @@
 		},
 		{
 			"name" : "HelloWorld_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/parijatchatterjee/Desktop/ToyRPC"
+		},
+		{
+			"name" : "ToyRPC_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/parijatchatterjee/Desktop/ToyRPC/cmake-build-debug"
+		},
+		{
+			"name" : "ToyRPC_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "ToyRPC_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/parijatchatterjee/Desktop/ToyRPC"
+		},
+		{
+			"name" : "Toy_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/parijatchatterjee/Desktop/ToyRPC/cmake-build-debug"
+		},
+		{
+			"name" : "Toy_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "Toy_SOURCE_DIR",
 			"properties" : 
 			[
 				{

@@ -2,10 +2,10 @@
 // Created by parijat chatterjee on 10/2/22.
 //
 
-#ifndef HELLOWORLD_CLIENTTCP_H
-#define HELLOWORLD_CLIENTTCP_H
+#ifndef TOYRPC_CLIENTTCP_H
+#define TOYRPC_CLIENTTCP_H
 
-
+#include <iostream>
 #include <sys/socket.h>
 #include <unistd.h>
 #include <netinet/in.h>
@@ -37,3 +37,5 @@ namespace Networking{
         void receive_response();
     };
 }
+
+#endif //TOYRPC_SERVERTCP_H

@@ -31,11 +31,6 @@ void Networking::ClientTCP::error_check(int item_to_test, int type) {
         perror("Client Failed To Connect...");
         exit(EXIT_FAILURE);
     }
-    // other helper functions
-    if(item_to_test <= 0){
-        perror("Invalid Address Type...");
-        exit(EXIT_FAILURE);
-    }
 }
 
 
@@ -49,7 +44,7 @@ void Networking::ClientTCP::receive_response() {
     // Read the response, un-marshaling happens here.
     char buffer[30000] = {0};
     long bytes_read = read(client.socket, buffer, 30000);
-    cout << response << endl;
+    std::cout << buffer << std::endl;
     close(client.socket);
 }
 

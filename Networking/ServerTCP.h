@@ -2,13 +2,12 @@
 // Created by parijat chatterjee on 10/2/22.
 //
 
-#ifndef HELLOWORLD_SERVERTCP_H
-#define HELLOWORLD_SERVERTCP_H
+#ifndef TOYRPC_SERVERTCP_H
+#define TOYRPC_SERVERTCP_H
 
-#include <vector>
 #include <iostream>
-#include <string>
 #include <unistd.h>
+
 #include <cstring>      // Needed for memset
 #include <sys/socket.h> // Needed for the socket functions
 #include <netdb.h>      // Needed for the socket functions
@@ -50,4 +49,4 @@ namespace Networking{
 
 
 
-#endif //HELLOWORLD_SERVERTCP_H
+#endif //TOYRPC_SERVERTCP_H

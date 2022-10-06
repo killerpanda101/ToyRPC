@@ -13,21 +13,21 @@ Networking::ServerTCP::ServerTCP(int port) {
 
     // create socket
     server.socket = socket(server.domain, server.service, server.protocol);
-    error_check(server.socket, 0)
+    error_check(server.socket, 0);
 
     address.sin_family = server.domain;
     address.sin_port = htons(server.port);
     address.sin_addr.s_addr = INADDR_ANY;
 
+    address.sin_len = sizeof(address);
+
     // bind it to the network
-    server.bind = bind(server.socket, (struct sockaddr *)&address, sizeof(address))
-    error_check(server.bind, 0)
+    server.bind = bind(server.socket, (struct sockaddr *)&address, sizeof(address));
+    error_check(server.bind, 0);
 
     // make it listening
     server.listen = listen(server.socket, server.backlog);
-    error_check(server.listen, 0)
-
-    return server;
+    error_check(server.listen, 0);
 }
 
 void Networking::ServerTCP::error_check(int item_to_test, int type) {
@@ -36,26 +36,21 @@ void Networking::ServerTCP::error_check(int item_to_test, int type) {
         perror("Server Failed.....");
         exit(EXIT_FAILURE);
     }
-    // other helper functions
-    if(item_to_test <= 0){
-        perror("Invalid Address Type...");
-        exit(EXIT_FAILURE);
-    }
 }
 
 // accept connections with client.
 void Networking::ServerTCP::receive_message() {
     while(1){
         // accept a connection, this accepted connection is what the server stub takes as input.
-        int new_client = accept(server.socket, (struct sockaddr *)&address, sizeof(address));
+        int new_client = accept(server.socket, (struct sockaddr *)&address, (socklen_t*)&address.sin_len);
         error_check(new_client, 0);
 
         // read data
         char buffer[30000] = {0};
-        long bytes_read = read( new_socket , buffer, 30000);
+        long bytes_read = read( new_client , buffer, 30000);
 
         // process the request
-        process_message(new_socket, buffer, 30000);
+        process_message(new_client, buffer);
 
         // close the connection
         close(new_client);
@@ -65,8 +60,8 @@ void Networking::ServerTCP::receive_message() {
 // process the data un-marshaling happens here.
 void Networking::ServerTCP::process_message(int connected_socket, char request[]) {
     // print the received message.
-    cout << request << endl;
-    send_response();
+    cout << request << std::endl;
+    send_response(connected_socket);
 }
 
 
