@@ -12,6 +12,7 @@ Networking::ClientTCP::ClientTCP(std::string ip, int port) {
     client.port = port;
     client.server_ip = ip;
 
+    // create socket
     client.socket = socket(client.domain, client.service, client.protocol);
     error_check(client.socket, 0);
 
@@ -37,17 +38,19 @@ void Networking::ClientTCP::error_check(int item_to_test, int type) {
     }
 }
 
-char * Networking::ClientTCP::receive() {
-    // Read the response.
-    char *response = static_cast<char *>(malloc(30000));
-    read(client.socket, response, 30000);
-    close(client.socket);
-    return response;
-}
 
 void Networking::ClientTCP::send_message(int customer_id, int order_number, int laptop_type) {
+    // to send orders, marshaling happens here.
     std::string message = "Hello from client";
     send(client.socket, message.c_str(), strlen(message.c_str()), 0);
+}
+
+void Networking::ClientTCP::receive_response() {
+    // Read the response, un-marshaling happens here.
+    char buffer[30000] = {0};
+    long bytes_read = read(client.socket, buffer, 30000);
+    cout << response << endl;
+    close(client.socket);
 }
 
 

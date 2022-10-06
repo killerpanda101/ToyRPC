@@ -30,10 +30,10 @@ namespace Networking{
         struct sockaddr_in address{};
         struct Client client{};
         static void error_check(int, int);
-        char * receive();
 
     public:
         ClientTCP(std::string ip, int port);
         void send_message(int customer_id,int order_number, int laptop_type);
+        void receive_response();
     };
 }

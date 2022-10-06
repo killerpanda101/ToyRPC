@@ -26,31 +26,24 @@ namespace Networking{
         int domain;
         int service;
         int protocol;
-        u_long interface;
         int port;
         int backlog;
-        struct sockaddr_in address;
+        // The network socket for handling connections.
         int socket;
-
-        struct Dictionary routes;
-
-        void (*register_routes)(struct Server *server, char *(*route_function)(void *arg), char *path);
+        int bind;
+        int listen;
     };
 
     class ServerTCP {
-        // initialize an new tcp server instance
-        void server(int){
-
-        };
-
-        // start listening at specified port
-        int Listen();
-
-        // servre On message behavior
-        void OnMessage(void (*fptr)(Node*,string) );
-
-        // stop tcp server
-        void Stop();
+    private:
+        struct sockaddr_in address{};
+        struct Server server{};
+        static void error_check(int, int);
+        void process_message(int connected_socket, char request[]);
+        void send_response(int connected_socket);
+    public:
+        ServerTCP(int port);
+        void receive_message();
 
     };
 }
