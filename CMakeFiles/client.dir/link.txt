@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/client.dir/Customer/Client.cpp.o CMakeFiles/client.dir/Networking/ClientTCP.cpp.o CMakeFiles/client.dir/Customer/ClientStub.cpp.o -o client 

@@ -1,3 +1,7 @@
+//
+// Created by parijat chatterjee on 10/2/22.
+//
+
 
 #include "ServerTCP.h"
 
@@ -6,7 +10,7 @@ Networking::ServerTCP::ServerTCP(int port) {
     server.service = SOCK_STREAM;
     server.protocol = 0;
     server.port = port;
-    server.backlog = 10;
+    server.backlog = 100;
 
     // create socket
     server.socket = socket(server.domain, server.service, server.protocol);
@@ -86,14 +90,5 @@ void Networking::ServerTCP::tokenize(char object[], const char *delim, std::vect
     }
 }
 
-// send back the response marshaling happens here.
-void Networking::ServerTCP::send_response(int connected_socket) {
-    // send a response back.
-    int customer_id = 0, order_number = 0, laptop_type = 0, engineer = 0, expert = 0;
 
-    // building the data stream.
-    std::stringstream ss;
-    ss << customer_id << "." << order_number << "." << laptop_type << "." << engineer << "." << expert;
 
-    write(connected_socket , ss.str().c_str() , strlen(ss.str().c_str()));
-}

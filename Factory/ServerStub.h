@@ -8,17 +8,15 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#include "SimpleServer.h"
 
-namespace Server{
-    class ServerStub: public SimpleServer {
+
+
+    class ServerStub {
     private:
         char buffer[30000] = {0};
         int new_socket{};
 
-        int acceptor() override;
-        void handler() override;
-        void responder() override;
+        i
     public:
         ServerStub();
         void Init();
