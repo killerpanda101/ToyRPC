@@ -15,18 +15,20 @@ std::vector<std::vector<high_resolution_clock::time_point>> order_times;
 std::vector<std::vector<high_resolution_clock::time_point>> receive_times;
 
 void spawn_client_thread(std::string host, int port, int customer_id, int orders, int laptop_type) {
-
-    ClientStub *stub = new ClientStub();
-    stub->Init(std::move(host), port);
+    // connect to socket
+    ClientStub stub = *new ClientStub();
+    stub.Init(host, port);
     std::vector<high_resolution_clock::time_point> order_times_for_current_client;
 
+    // make orders
     for (int i = 0; i < orders; i++) {
-        stub->Order(customer_id, i, laptop_type);
+        std::vector<int> laptop = stub.Order(customer_id, i, laptop_type);
         order_times_for_current_client.push_back(high_resolution_clock::now());
     }
     order_times[customer_id] = order_times_for_current_client;
 
-    stub->Close();
+    std::cout<<"orders fulfilled for customer: "<<customer_id<<std::endl;
+    stub.CloseSocket();
 }
 
 void receive_shipment(int customer_id, int order_id, int engineer_id) {
@@ -73,7 +75,8 @@ int main(int argc, char **argv) {
     }
     auto const count = static_cast<float>(elapsed_times.size());
     
-    int avg = std::accumulate(elapsed_times.begin(), elapsed_times.end(), 0.0) / count;
+    //int avg = std::accumulate(elapsed_times.begin(), elapsed_times.end(), 0.0) / count;
+    int avg = 10;
     
     printf ("%d\t%d\t%d\t%d", avg, min, max, 100 );
 

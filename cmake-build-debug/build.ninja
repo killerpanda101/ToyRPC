@@ -52,12 +52,6 @@ build CMakeFiles/client.dir/Customer/Client.cpp.o: CXX_COMPILER__client_Debug /U
   OBJECT_DIR = CMakeFiles/client.dir
   OBJECT_FILE_DIR = CMakeFiles/client.dir/Customer
 
-build CMakeFiles/client.dir/Networking/ClientTCP.cpp.o: CXX_COMPILER__client_Debug /Users/parijatchatterjee/Desktop/ToyRPC/Networking/ClientTCP.cpp || cmake_object_order_depends_target_client
-  DEP_FILE = CMakeFiles/client.dir/Networking/ClientTCP.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++11
-  OBJECT_DIR = CMakeFiles/client.dir
-  OBJECT_FILE_DIR = CMakeFiles/client.dir/Networking
-
 build CMakeFiles/client.dir/Customer/ClientStub.cpp.o: CXX_COMPILER__client_Debug /Users/parijatchatterjee/Desktop/ToyRPC/Customer/ClientStub.cpp || cmake_object_order_depends_target_client
   DEP_FILE = CMakeFiles/client.dir/Customer/ClientStub.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++11
@@ -72,7 +66,7 @@ build CMakeFiles/client.dir/Customer/ClientStub.cpp.o: CXX_COMPILER__client_Debu
 #############################################
 # Link the executable client
 
-build client: CXX_EXECUTABLE_LINKER__client_Debug CMakeFiles/client.dir/Customer/Client.cpp.o CMakeFiles/client.dir/Networking/ClientTCP.cpp.o CMakeFiles/client.dir/Customer/ClientStub.cpp.o
+build client: CXX_EXECUTABLE_LINKER__client_Debug CMakeFiles/client.dir/Customer/Client.cpp.o CMakeFiles/client.dir/Customer/ClientStub.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/client.dir
   POST_BUILD = :

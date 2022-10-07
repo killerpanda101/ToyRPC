@@ -8,7 +8,6 @@
 #include <string>
 #include <vector>
 #include <thread>
-#include "../Networking/ClientTCP.h"
 #include "ClientStub.h"
 
 class Client {
