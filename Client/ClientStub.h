@@ -7,13 +7,16 @@
 
 
 #include <string>
-#include "../Networking/libc-networking.h"
+#include "../Networking/ClientTCP.h"
+
 
 class ClientStub {
-
+private:
+    Networking::ClientTCP sendingSocket;
+public:
     void Init(std::string ip , int port);
     void Order(int customer_id, int order_number, int laptop_type);
-
+    void Close();
 };
 
 

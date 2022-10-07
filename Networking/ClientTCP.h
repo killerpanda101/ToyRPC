@@ -10,6 +10,9 @@
 #include <unistd.h>
 #include <netinet/in.h>
 #include <string>
+#include <arpa/inet.h>
+#include <vector>
+#include <sstream>
 
 namespace Networking{
     struct Client
@@ -29,13 +32,15 @@ namespace Networking{
     private:
         struct sockaddr_in address{};
         struct Client client{};
-        static void error_check(int, int);
+        static void error_check(int);
+        static void tokenize(char *object, const char *delim, std::vector<std::int32_t> &out);
 
     public:
-        ClientTCP(std::string ip, int port);
-        void send_message(int customer_id,int order_number, int laptop_type);
-        void receive_response();
+        ClientTCP(const std::string& ip, int port);
+        void send_message(int customer_id,int order_number, int laptop_type) const;
+        void receive_response() const;
+        void close_connection();
     };
 }
 
-#endif //TOYRPC_SERVERTCP_H
+#endif //TOYRPC_CLIENTTCP_H

@@ -6,8 +6,9 @@
 #define TOYRPC_SERVERTCP_H
 
 #include <iostream>
+#include <sstream>
 #include <unistd.h>
-
+#include <vector>
 #include <cstring>      // Needed for memset
 #include <sys/socket.h> // Needed for the socket functions
 #include <netdb.h>      // Needed for the socket functions
@@ -37,11 +38,12 @@ namespace Networking{
     private:
         struct sockaddr_in address{};
         struct Server server{};
-        static void error_check(int, int);
-        void process_message(int connected_socket, char request[]);
-        void send_response(int connected_socket);
+        static void error_check(int);
+        static void process_message(int connected_socket, char request[]);
+        static void send_response(int connected_socket);
+        static void tokenize(char object[], const char* delim, std::vector<std::int32_t> &out);
     public:
-        ServerTCP(int port);
+        explicit ServerTCP(int port);
         void receive_message();
 
     };
