@@ -14,6 +14,7 @@ void spawn_client_thread(std::string host, int port, int customer_id, int orders
     for (int i = 0; i < orders; i++) {
         stub->Order(customer_id, i, laptop_type);
     }
+    stub->Close();
 }
 
 int main(int argc, char **argv) {

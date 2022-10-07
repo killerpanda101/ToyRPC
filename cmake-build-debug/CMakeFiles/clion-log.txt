@@ -1,9 +1,4 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/parijatchatterjee/Desktop/ToyRPC -B /Users/parijatchatterjee/Desktop/ToyRPC/cmake-build-debug
--- Looking for pthread.h
--- Looking for pthread.h - found
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE  
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/parijatchatterjee/Desktop/ToyRPC/cmake-build-debug

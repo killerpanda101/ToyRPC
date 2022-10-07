@@ -16,6 +16,7 @@
 #include <vector>
 #include <sstream>
 #include <netinet/in.h>
+#include "../Factory/Engineer.h"
 
 using std::string;
 using std::cout;
@@ -40,13 +41,10 @@ namespace Networking{
         struct sockaddr_in address{};
         struct Server server{};
         static void error_check(int);
-        void process_message(int connected_socket, char request[]);
-        void send_response(int connected_socket);
-        void tokenize(char object[], const char *delim, std::vector<int> &out);
+
     public:
         ServerTCP(int port);
-        void receive_message();
-
+        void start();
     };
 }
 

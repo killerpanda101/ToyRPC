@@ -13,7 +13,8 @@ void ClientStub::Init(std::string ip, int port) {
 // send and receive one order at a time.
 void ClientStub::Order(int customer_id, int order_number, int laptop_type) {
     sendingSocket.send_message(customer_id, order_number, laptop_type);
-    sendingSocket.receive_response();
+    sendingSocket.close_connection();
+    //sendingSocket.receive_response();
 }
 
 // close the connection once a customer has made all the orders.

@@ -58,7 +58,7 @@ void Networking::ClientTCP::tokenize(char object[], const char *delim, std::vect
 void Networking::ClientTCP::receive_response() const {
     // Read the response
     char buffer[50] = {0};
-    long bytes_read = read(client.socket, buffer, 30000);
+    long bytes_read = read(client.socket, buffer, 50);
 
     const char* delim = ".";
     std::vector<int> out;
