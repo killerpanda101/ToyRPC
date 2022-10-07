@@ -7,24 +7,19 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <vector>
+#include <sstream>
+#include <sys/socket.h>
 
-
-
-
-    class ServerStub {
+class ServerStub {
     private:
-        char buffer[30000] = {0};
-        int new_socket{};
+        int client_socket;
+        static void tokenize(char object[], const char *delim, std::vector<int> &out);
 
-        i
     public:
-        ServerStub();
-        void Init();
-        void ReceiveOrder();
-        void ShipLaptop();
-    };
-}
-
-
+        void Init(int);
+        std::vector<int> ReceiveOrder();
+        void ShipLaptop(int, int, int, int, int);
+};
 
 #endif //HELLOWORLD_SERVERSTUB_H
