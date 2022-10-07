@@ -8,6 +8,7 @@
 #include <iostream>
 #include <unistd.h>
 #include <thread>
+#include "../Factory/Engineer.h"
 
 #include <cstring>      // Needed for memset
 #include <sys/socket.h> // Needed for the socket functions
@@ -41,9 +42,7 @@ namespace Networking{
         struct sockaddr_in address{};
         struct Server server{};
         static void error_check(int);
-        void process_message(int connected_socket, char request[]);
-        void tokenize(char object[], const char *delim, std::vector<int> &out);
-        void engineer(int client);
+        //void engineer(int client);
     public:
         ServerTCP(int port);
         void start();

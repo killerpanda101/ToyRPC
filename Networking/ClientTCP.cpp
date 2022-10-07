@@ -42,7 +42,11 @@ void Networking::ClientTCP::error_check(int item_to_test) {
 void Networking::ClientTCP::send_message(int customer_id, int order_number, int laptop_type) const {
     std::stringstream ss;
     ss << customer_id << "." << order_number << "." << laptop_type;
-    send(client.socket, ss.str().c_str(), strlen(ss.str().c_str()), 0);
+    int sendLen = strlen(ss.str().c_str());
+    if(write(client.socket, ss.str().c_str(), sendLen)!=sendLen){
+        perror("Client was not able to write to the socket.");
+        exit(EXIT_FAILURE);
+    }
 }
 
 // split on space
@@ -58,19 +62,28 @@ void Networking::ClientTCP::tokenize(char object[], const char *delim, std::vect
 void Networking::ClientTCP::receive_response() const {
     // Read the response
     char buffer[50] = {0};
-    long bytes_read = read(client.socket, buffer, 50);
+    int rc = recv( client.socket , buffer, 50, 0);
+    if(rc < 0){
+        perror("Client failed to read response from socket.");
+        exit(EXIT_FAILURE);
+    }
+    if(rc == 0){
+        // Server has closed the connection.
+        perror("Server has closed the connection.");
+        exit(EXIT_FAILURE);
+    }
 
     const char* delim = ".";
     std::vector<int> out;
     tokenize(buffer, delim, out);
 
-    for (auto &s: out) {
-        std::cout << s << std::endl;
+    if(out.size()!=5){
+        perror("Invalid response received from server...");
+        exit(EXIT_FAILURE);
     }
-
 }
 
-void Networking::ClientTCP::close_connection(){
+void Networking::ClientTCP::close_connection() const{
     // close the client
     close(client.socket);
 }

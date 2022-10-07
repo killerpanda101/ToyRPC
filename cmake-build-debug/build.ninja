@@ -107,6 +107,12 @@ build CMakeFiles/server.dir/Factory/Engineer.cpp.o: CXX_COMPILER__server_Debug /
   OBJECT_DIR = CMakeFiles/server.dir
   OBJECT_FILE_DIR = CMakeFiles/server.dir/Factory
 
+build CMakeFiles/server.dir/Factory/ServerStub.cpp.o: CXX_COMPILER__server_Debug /Users/parijatchatterjee/Desktop/ToyRPC/Factory/ServerStub.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = CMakeFiles/server.dir/Factory/ServerStub.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/server.dir
+  OBJECT_FILE_DIR = CMakeFiles/server.dir/Factory
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target server
@@ -115,7 +121,7 @@ build CMakeFiles/server.dir/Factory/Engineer.cpp.o: CXX_COMPILER__server_Debug /
 #############################################
 # Link the executable server
 
-build server: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/Factory/Server.cpp.o CMakeFiles/server.dir/Networking/ServerTCP.cpp.o CMakeFiles/server.dir/Factory/Engineer.cpp.o
+build server: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/Factory/Server.cpp.o CMakeFiles/server.dir/Networking/ServerTCP.cpp.o CMakeFiles/server.dir/Factory/Engineer.cpp.o CMakeFiles/server.dir/Factory/ServerStub.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/server.dir
   POST_BUILD = :

@@ -21,7 +21,6 @@ void spawn_client_thread(std::string host, int port, int customer_id, int orders
     std::vector<high_resolution_clock::time_point> order_times_for_current_client;
 
     for (int i = 0; i < orders; i++) {
-        std::cout << "Cust: " << customer_id << " Orderz: " << i << std::endl;
         stub->Order(customer_id, i, laptop_type);
         order_times_for_current_client.push_back(high_resolution_clock::now());
     }
@@ -73,9 +72,9 @@ int main(int argc, char **argv) {
         elapsed_times[i] = elapsed_time_for_cust;
     }
     auto const count = static_cast<float>(elapsed_times.size());
+    
     int avg = std::accumulate(elapsed_times.begin(), elapsed_times.end(), 0.0) / count;
-
-
+    
     printf ("%d\t%d\t%d\t%d", avg, min, max, 100 );
 
     return 0;

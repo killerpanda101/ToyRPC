@@ -2,6 +2,7 @@
 // Created by parijat chatterjee on 10/2/22.
 //
 
+#include <iostream>
 #include "ServerStub.h"
 
 void ServerStub::Init(int connected_socket) {
@@ -11,22 +12,28 @@ void ServerStub::Init(int connected_socket) {
 std::vector<int> ServerStub::ReceiveOrder() {
     // read the order from the client socket
     char buffer[30] = {0};
-    int rc = recv( client_socket , buffer, 30, 0);
+    std::vector<int> out;
+    int rc;
+
+    while((rc = recv(client_socket , buffer, 30-1, 0))>0)
     if(rc < 0){
         perror("Server failed to read data from socket.");
         exit(EXIT_FAILURE);
     }
     if(rc == 0){
-        // figure out how to break the loop.
+        // client has closed the connection.
+        return out;
     }
 
     // unmarshal the order
     const char* delim = ".";
-    std::vector<int> out;
+
     tokenize(buffer, delim, out);
 
     // order should have three parameters
     if(out.size()!=3){
+        std::cout << buffer << std::endl;
+
         perror("Invalid order received by server...");
         exit(EXIT_FAILURE);
     }

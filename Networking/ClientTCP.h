@@ -40,7 +40,7 @@ namespace Networking{
         ClientTCP(const std::string& ip, int port);
         void send_message(int customer_id,int order_number, int laptop_type) const;
         void receive_response() const;
-        void close_connection();
+        void close_connection() const;
     };
 }
 

@@ -2,7 +2,6 @@
 // Created by parijat chatterjee on 10/2/22.
 //
 
-
 #include "ServerTCP.h"
 
 Networking::ServerTCP::ServerTCP(int port) {
@@ -38,6 +37,7 @@ void Networking::ServerTCP::error_check(int item_to_test) {
 }
 
 
+<<<<<<< Updated upstream
 void Networking::ServerTCP::engineer(int new_client) {
     error_check(new_client);
 
@@ -54,19 +54,42 @@ void Networking::ServerTCP::engineer(int new_client) {
 
 // accept connections with client.
 void Networking::ServerTCP::start() {
+=======
+//void Networking::ServerTCP::engineer(int new_client) {
+//    error_check(new_client);
+//
+//    // read data
+//    char buffer[30] = {0};
+//    while (read(new_client, buffer, 30) > 0) {
+//        process_message(new_client, buffer);
+//    }
+//
+//    // close the connection
+//    close(new_client);
+//}
+
+// accept connections with client.
+void Networking::ServerTCP::start() {
+    int engineer_id=0;
+>>>>>>> Stashed changes
     while (true) {
         int addrlen = sizeof(address);
         // accept a connection, this accepted connection is what the server stub takes as input.
         int new_client = accept(server.socket, (struct sockaddr *) &address, (socklen_t *) &addrlen);
+<<<<<<< Updated upstream
         std::thread t(&ServerTCP::engineer, this, new_client);
         t.detach();
 
+=======
+        std::thread t(engineer, new_client, engineer_id);
+        engineer_id+=1;
+        t.detach();
+>>>>>>> Stashed changes
     }
 }
 
-// process the data un-marshaling happens here.
-void Networking::ServerTCP::process_message(int connected_socket, char request[]) {
 
+<<<<<<< Updated upstream
     const char *delim = ".";
     // std::cout << request;
     std::vector<int> out;
@@ -87,6 +110,9 @@ void Networking::ServerTCP::tokenize(char object[], const char *delim, std::vect
         token = strtok(nullptr, delim);
     }
 }
+=======
+
+>>>>>>> Stashed changes
 
 
 
