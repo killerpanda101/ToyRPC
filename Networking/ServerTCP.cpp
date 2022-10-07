@@ -10,7 +10,7 @@ Networking::ServerTCP::ServerTCP(int port) {
     server.service = SOCK_STREAM;
     server.protocol = 0;
     server.port = port;
-    server.backlog = 100;
+    server.backlog = 10;
 
     // create socket
     server.socket = socket(server.domain, server.service, server.protocol);
@@ -58,7 +58,7 @@ void Networking::ServerTCP::start() {
         int new_client = accept(server.socket, (struct sockaddr *)&address, (socklen_t*)&addrlen);
         std::thread t(&ServerTCP::engineer, this, new_client);
         if (t.joinable()) {
-            t.detach();
+            t.join();
         }
 
     }
