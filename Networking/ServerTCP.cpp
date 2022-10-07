@@ -37,7 +37,7 @@ void Networking::ServerTCP::error_check(int item_to_test) {
 }
 
 
-<<<<<<< Updated upstream
+
 void Networking::ServerTCP::engineer(int new_client) {
     error_check(new_client);
 
