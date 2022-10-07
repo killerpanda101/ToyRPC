@@ -51,7 +51,7 @@ void Networking::ServerTCP::engineer(int new_client) {
     close(new_client);
 }
 // accept connections with client.
-void Networking::ServerTCP::receive_message() {
+void Networking::ServerTCP::start() {
     while(true){
         int addrlen = sizeof(address);
         // accept a connection, this accepted connection is what the server stub takes as input.
