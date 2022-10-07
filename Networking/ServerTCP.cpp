@@ -1,7 +1,3 @@
-//
-// Created by parijat chatterjee on 10/2/22.
-//
-
 
 #include "ServerTCP.h"
 
@@ -37,36 +33,45 @@ void Networking::ServerTCP::error_check(int item_to_test) {
     }
 }
 
+
+void Networking::ServerTCP::engineer(int new_client) {
+    error_check(new_client);
+
+    // read data
+    char buffer[30] = {0};
+    while (read( new_client , buffer, 30) > 0) {
+        process_message(new_client, buffer);
+    }
+
+    // close the connection
+    close(new_client);
+}
 // accept connections with client.
 void Networking::ServerTCP::receive_message() {
     while(true){
         int addrlen = sizeof(address);
         // accept a connection, this accepted connection is what the server stub takes as input.
         int new_client = accept(server.socket, (struct sockaddr *)&address, (socklen_t*)&addrlen);
-        error_check(new_client);
+        std::thread t(&ServerTCP::engineer, this, new_client);
+        if (t.joinable()) {
+            t.detach();
+        }
 
-        // read data
-        char buffer[30] = {0};
-        long bytes_read = read( new_client , buffer, 30000);
-
-        // process the request
-        process_message(new_client, buffer);
-
-        // close the connection
-        close(new_client);
     }
 }
 
 // process the data un-marshaling happens here.
 void Networking::ServerTCP::process_message(int connected_socket, char request[]) {
-    std::cout << request << std::endl;
-//    const char* delim = ".";
-//    std::vector<int> out;
-//    tokenize(request, delim, out);
-//
-//    for (auto &s: out) {
-//        std::cout << s << std::endl;
-//    }
+
+    const char* delim = ".";
+   // std::cout << request;
+    std::vector<int> out;
+    tokenize(request, delim, out);
+
+    for (auto &s: out) {
+        std::cout << s << std::endl;
+    }
+    std::cout << std::endl;
 
     send_response(connected_socket);
 }
@@ -88,8 +93,7 @@ void Networking::ServerTCP::send_response(int connected_socket) {
 
     // building the data stream.
     std::stringstream ss;
-    ss << customer_id << " " << order_number << " " << laptop_type << " " << engineer << " " << expert;
+    ss << customer_id << "." << order_number << "." << laptop_type << "." << engineer << "." << expert;
 
     write(connected_socket , ss.str().c_str() , strlen(ss.str().c_str()));
 }
-

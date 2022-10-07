@@ -16,6 +16,7 @@
 #include <vector>
 #include <sstream>
 #include <netinet/in.h>
+#include <thread>
 
 using std::string;
 using std::cout;
@@ -43,6 +44,7 @@ namespace Networking{
         void process_message(int connected_socket, char request[]);
         void send_response(int connected_socket);
         void tokenize(char object[], const char *delim, std::vector<int> &out);
+        void engineer(int client);
     public:
         ServerTCP(int port);
         void receive_message();

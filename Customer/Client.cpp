@@ -12,8 +12,10 @@ void spawn_client_thread(std::string host, int port, int customer_id, int orders
     ClientStub *stub = new ClientStub();
     stub->Init(std::move(host), port);
     for (int i = 0; i < orders; i++) {
+        std::cout << "Cust: " <<  customer_id <<" Orderz: " << i  << std::endl;
         stub->Order(customer_id, i, laptop_type);
     }
+    stub->Close();
 }
 
 int main(int argc, char **argv) {

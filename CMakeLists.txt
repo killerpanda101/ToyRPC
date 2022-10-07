@@ -11,3 +11,4 @@ add_executable(TestServer Networking/TestServer.cpp ./Networking/ServerTCP.h ./N
 
 add_executable(client Customer/Client.cpp ./Networking/ClientTCP.h ./Networking/ClientTCP.cpp ./Customer/ClientStub.cpp)
 target_link_libraries(client PRIVATE Threads::Threads)
+target_link_libraries(TestServer PRIVATE Threads::Threads)
