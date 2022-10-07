@@ -4,6 +4,11 @@
 
 
 #include "ClientTCP.h"
+#include <cstring>
+
+Networking::ClientTCP::ClientTCP() {
+
+}
 
 Networking::ClientTCP::ClientTCP(const std::string& ip, int port) {
     client.domain = AF_INET;

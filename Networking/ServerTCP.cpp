@@ -59,14 +59,14 @@ void Networking::ServerTCP::receive_message() {
 
 // process the data un-marshaling happens here.
 void Networking::ServerTCP::process_message(int connected_socket, char request[]) {
-
-    const char* delim = ".";
-    std::vector<int> out;
-    tokenize(request, delim, out);
-
-    for (auto &s: out) {
-        std::cout << s << std::endl;
-    }
+    std::cout << request;
+//    const char* delim = ".";
+//    std::vector<int> out;
+//    tokenize(request, delim, out);
+//
+//    for (auto &s: out) {
+//        std::cout << s << std::endl;
+//    }
 
     send_response(connected_socket);
 }
@@ -88,7 +88,7 @@ void Networking::ServerTCP::send_response(int connected_socket) {
 
     // building the data stream.
     std::stringstream ss;
-    ss << customer_id << "." << order_number << "." << laptop_type << "." << engineer << "." << expert;
+    ss << customer_id << " " << order_number << " " << laptop_type << " " << engineer << " " << expert;
 
     write(connected_socket , ss.str().c_str() , strlen(ss.str().c_str()));
 }

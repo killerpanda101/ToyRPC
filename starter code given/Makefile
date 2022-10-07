@@ -14,12 +14,12 @@ SRCS := $(wildcard *.cpp)
 OBJS := $(SRCS:.cpp=.o)		# replaces .cpp extension to .o (e.g., main.cpp -> main.o)
 				# and stores the names to OBJS
 
-# $(wildcard Server*.h) finds all file names with patterns ("Server" + random string + ".h")
+# $(wildcard Factory*.h) finds all file names with patterns ("Factory" + random string + ".h")
 SVR_HDRS := $(wildcard Server*.h)	
 SVR_SRCS := $(wildcard Server*.cpp)
 SVR_OBJS := $(SVR_SRCS:.cpp=.o)
 
-# $(wildcard Client*.h) finds all file names with patterns ("Client" + random string + ".h")
+# $(wildcard Customer*.h) finds all file names with patterns ("Customer" + random string + ".h")
 CLNT_HDRS := $(wildcard Client*.h)
 CLNT_SRCS := $(wildcard Client*.cpp)
 CLNT_OBJS := $(CLNT_SRCS:.cpp=.o)

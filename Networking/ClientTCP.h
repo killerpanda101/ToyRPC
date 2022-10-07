@@ -36,6 +36,7 @@ namespace Networking{
         static void tokenize(char *object, const char *delim, std::vector<std::int32_t> &out);
 
     public:
+        ClientTCP();
         ClientTCP(const std::string& ip, int port);
         void send_message(int customer_id,int order_number, int laptop_type) const;
         void receive_response() const;

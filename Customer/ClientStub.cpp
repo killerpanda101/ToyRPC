@@ -20,5 +20,8 @@ void ClientStub::Order(int customer_id, int order_number, int laptop_type) {
 void ClientStub::Close(){
     sendingSocket.close_connection();
 }
-
+//
+//ClientStub::ClientStub(std::string ip, int port) {
+//    Init(ip, port);
+//}
 

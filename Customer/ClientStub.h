@@ -12,8 +12,11 @@
 
 class ClientStub {
 private:
+    //ClientStub(std::string ip, int port);
+
     Networking::ClientTCP sendingSocket;
 public:
+//    ClientStub();
     void Init(std::string ip , int port);
     void Order(int customer_id, int order_number, int laptop_type);
     void Close();
