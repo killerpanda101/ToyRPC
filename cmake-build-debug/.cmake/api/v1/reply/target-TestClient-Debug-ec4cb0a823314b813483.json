@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "TestServer"
+			"path" : "TestClient"
 		}
 	],
 	"backtrace" : 1,
@@ -57,7 +57,7 @@
 			]
 		}
 	],
-	"id" : "TestServer::@6890427a1f51a3e7e1df",
+	"id" : "TestClient::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -73,8 +73,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "TestServer",
-	"nameOnDisk" : "TestServer",
+	"name" : "TestClient",
+	"nameOnDisk" : "TestClient",
 	"paths" : 
 	{
 		"build" : ".",
@@ -103,18 +103,18 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Networking/TestServer.cpp",
+			"path" : "Networking/TestClient.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Networking/ServerTCP.h",
+			"path" : "Networking/ClientTCP.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Networking/ServerTCP.cpp",
+			"path" : "Networking/ClientTCP.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

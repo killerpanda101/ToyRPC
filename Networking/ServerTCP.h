@@ -13,7 +13,8 @@
 #include <sys/socket.h> // Needed for the socket functions
 #include <netdb.h>      // Needed for the socket functions
 #include <netinet/in.h> // Needed for internet addresses
-
+#include <vector>
+#include <sstream>
 #include <netinet/in.h>
 
 using std::string;
@@ -38,9 +39,10 @@ namespace Networking{
     private:
         struct sockaddr_in address{};
         struct Server server{};
-        static void error_check(int, int);
+        static void error_check(int);
         void process_message(int connected_socket, char request[]);
         void send_response(int connected_socket);
+        void tokenize(char object[], const char *delim, std::vector<int> &out);
     public:
         ServerTCP(int port);
         void receive_message();

@@ -59,7 +59,7 @@ void Networking::ServerTCP::receive_message() {
 
 // process the data un-marshaling happens here.
 void Networking::ServerTCP::process_message(int connected_socket, char request[]) {
-    std::cout << request;
+    std::cout << request << std::endl;
 //    const char* delim = ".";
 //    std::vector<int> out;
 //    tokenize(request, delim, out);

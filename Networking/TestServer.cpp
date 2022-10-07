@@ -5,6 +5,6 @@
 #include "ServerTCP.h"
 
 int main(){
-    Networking::ServerTCP server = Networking::ServerTCP(80);
+    Networking::ServerTCP server = Networking::ServerTCP(8069);
     server.receive_message();
 }

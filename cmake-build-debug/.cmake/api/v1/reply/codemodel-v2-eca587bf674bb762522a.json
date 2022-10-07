@@ -9,14 +9,15 @@
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.23"
+						"string" : "3.16.3"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -41,15 +43,22 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "TestClient::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TestClient-Debug-c96b74cbba203fea8589.json",
+					"jsonFile" : "target-TestClient-Debug-ec4cb0a823314b813483.json",
 					"name" : "TestClient",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "TestServer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TestServer-Debug-bf0ec8b8fdcfde5c984a.json",
+					"jsonFile" : "target-TestServer-Debug-4702e14f28f129241221.json",
 					"name" : "TestServer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "client::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-client-Debug-e4e1372dfc67db8a273b.json",
+					"name" : "client",
 					"projectIndex" : 0
 				}
 			]
