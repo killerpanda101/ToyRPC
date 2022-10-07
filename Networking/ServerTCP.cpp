@@ -77,7 +77,6 @@ void Networking::ServerTCP::process_message(int connected_socket, char request[]
     }
     std::cout << std::endl;
 
-    send_response(connected_socket);
 }
 
 // split on space

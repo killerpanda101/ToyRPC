@@ -42,7 +42,6 @@ namespace Networking{
         struct Server server{};
         static void error_check(int);
         void process_message(int connected_socket, char request[]);
-        void send_response(int connected_socket);
         void tokenize(char object[], const char *delim, std::vector<int> &out);
         void engineer(int client);
     public:
