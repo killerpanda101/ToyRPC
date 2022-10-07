@@ -49,6 +49,7 @@ void Networking::ServerTCP::engineer(int new_client) {
 
     // close the connection
     close(new_client);
+    std::terminate();
 }
 
 // accept connections with client.
