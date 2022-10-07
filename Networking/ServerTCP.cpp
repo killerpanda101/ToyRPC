@@ -10,7 +10,7 @@ Networking::ServerTCP::ServerTCP(int port) {
     server.service = SOCK_STREAM;
     server.protocol = 0;
     server.port = port;
-    server.backlog = 100;
+    server.backlog = 10;
 
     // create socket
     server.socket = socket(server.domain, server.service, server.protocol);
@@ -21,7 +21,7 @@ Networking::ServerTCP::ServerTCP(int port) {
     address.sin_addr.s_addr = INADDR_ANY;
 
     // bind it to the network
-    server.bind = bind(server.socket, (struct sockaddr *)&address, sizeof(address));
+    server.bind = bind(server.socket, (struct sockaddr *) &address, sizeof(address));
     error_check(server.bind);
 
     // make it listening
@@ -31,7 +31,7 @@ Networking::ServerTCP::ServerTCP(int port) {
 
 void Networking::ServerTCP::error_check(int item_to_test) {
     // socket functions
-    if(item_to_test < 0){
+    if (item_to_test < 0) {
         perror("Server Failed.....");
         exit(EXIT_FAILURE);
     }
@@ -43,23 +43,23 @@ void Networking::ServerTCP::engineer(int new_client) {
 
     // read data
     char buffer[30] = {0};
-    while (read( new_client , buffer, 30) > 0) {
+    while (read(new_client, buffer, 30) > 0) {
         process_message(new_client, buffer);
     }
 
     // close the connection
     close(new_client);
+    std::terminate();
 }
+
 // accept connections with client.
 void Networking::ServerTCP::start() {
-    while(true){
+    while (true) {
         int addrlen = sizeof(address);
         // accept a connection, this accepted connection is what the server stub takes as input.
-        int new_client = accept(server.socket, (struct sockaddr *)&address, (socklen_t*)&addrlen);
+        int new_client = accept(server.socket, (struct sockaddr *) &address, (socklen_t *) &addrlen);
         std::thread t(&ServerTCP::engineer, this, new_client);
-        if (t.joinable()) {
-            t.detach();
-        }
+        t.detach();
 
     }
 }
@@ -67,8 +67,8 @@ void Networking::ServerTCP::start() {
 // process the data un-marshaling happens here.
 void Networking::ServerTCP::process_message(int connected_socket, char request[]) {
 
-    const char* delim = ".";
-   // std::cout << request;
+    const char *delim = ".";
+    // std::cout << request;
     std::vector<int> out;
     tokenize(request, delim, out);
 
@@ -82,8 +82,7 @@ void Networking::ServerTCP::process_message(int connected_socket, char request[]
 // split on space
 void Networking::ServerTCP::tokenize(char object[], const char *delim, std::vector<int> &out) {
     char *token = strtok(object, delim);
-    while (token != nullptr)
-    {
+    while (token != nullptr) {
         out.push_back(atoi(token));
         token = strtok(nullptr, delim);
     }
