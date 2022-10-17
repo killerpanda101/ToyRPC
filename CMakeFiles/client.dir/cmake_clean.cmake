@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.dir/Customer/Client.cpp.o.d"
   "CMakeFiles/client.dir/Customer/ClientStub.cpp.o"
   "CMakeFiles/client.dir/Customer/ClientStub.cpp.o.d"
-  "CMakeFiles/client.dir/Networking/ClientTCP.cpp.o"
-  "CMakeFiles/client.dir/Networking/ClientTCP.cpp.o.d"
   "client"
   "client.pdb"
 )

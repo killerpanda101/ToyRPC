@@ -36,83 +36,22 @@ void Networking::ServerTCP::error_check(int item_to_test) {
     }
 }
 
-
-
-void Networking::ServerTCP::engineer(int new_client) {
-    error_check(new_client);
-
-    // read data
-    char buffer[30] = {0};
-    while (read(new_client, buffer, 30) > 0) {
-        process_message(new_client, buffer);
-    }
-
-    // close the connection
-    close(new_client);
-    std::terminate();
-}
-
-// accept connections with client.
-void Networking::ServerTCP::start() {
-=======
-//void Networking::ServerTCP::engineer(int new_client) {
-//    error_check(new_client);
-//
-//    // read data
-//    char buffer[30] = {0};
-//    while (read(new_client, buffer, 30) > 0) {
-//        process_message(new_client, buffer);
-//    }
-//
-//    // close the connection
-//    close(new_client);
-//}
-
-// accept connections with client.
 void Networking::ServerTCP::start() {
     int engineer_id=0;
->>>>>>> Stashed changes
+    std::vector<std::thread> thread_vector;
+
     while (true) {
         int addrlen = sizeof(address);
         // accept a connection, this accepted connection is what the server stub takes as input.
         int new_client = accept(server.socket, (struct sockaddr *) &address, (socklen_t *) &addrlen);
-<<<<<<< Updated upstream
-        std::thread t(&ServerTCP::engineer, this, new_client);
-        t.detach();
 
-=======
-        std::thread t(engineer, new_client, engineer_id);
-        engineer_id+=1;
-        t.detach();
->>>>>>> Stashed changes
+        std::thread t(engineer, new_client, engineer_id++);
+        thread_vector.push_back(std::move(t));
+
     }
 }
 
 
-<<<<<<< Updated upstream
-    const char *delim = ".";
-    // std::cout << request;
-    std::vector<int> out;
-    tokenize(request, delim, out);
-
-    for (auto &s: out) {
-        std::cout << s << std::endl;
-    }
-    std::cout << std::endl;
-
-}
-
-// split on space
-void Networking::ServerTCP::tokenize(char object[], const char *delim, std::vector<int> &out) {
-    char *token = strtok(object, delim);
-    while (token != nullptr) {
-        out.push_back(atoi(token));
-        token = strtok(nullptr, delim);
-    }
-}
-=======
-
->>>>>>> Stashed changes
 
 
 

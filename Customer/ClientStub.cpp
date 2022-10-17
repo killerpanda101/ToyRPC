@@ -3,9 +3,11 @@
 //
 
 #include "ClientStub.h"
+#include "../Networking/Message.h"
+#include "../Networking/SendRecv.h"
 
 // connect to client
-void ClientStub::Init(std::string ip, int port) {
+void ClientStub::Init(const std::string& ip, int port) {
     client.domain = AF_INET;
     client.service = SOCK_STREAM;
     client.protocol = 0;
@@ -26,63 +28,24 @@ void ClientStub::Init(std::string ip, int port) {
 }
 
 // send and receive one order at a time.
-std::vector<int> ClientStub::Order(int customer_id, int order_number, int laptop_type) {
-    send_order(customer_id, order_number, laptop_type);
-    return receive_order();
-}
-
-
-// to send orders, marshaling happens here.
-void ClientStub::send_order(int customer_id, int order_number, int laptop_type) const {
-    std::stringstream ss;
-    ss << customer_id << "." << order_number << "." << laptop_type;
-    int sendLen = strlen(ss.str().c_str());
-    if(write(client.socket, ss.str().c_str(), sendLen)!=sendLen){
-        perror("Client was not able to write to the socket.");
-        exit(EXIT_FAILURE);
-    }
-}
-
-
-std::vector<int> ClientStub::receive_order() const {
-    // Read the response
-    char buffer[50] = {0};
-    int rc = recv( client.socket , buffer, 50, 0);
-    if(rc < 0){
-        perror("Client failed to read response from socket.");
-        exit(EXIT_FAILURE);
-    }
-    if(rc == 0){
-        // Server has closed the connection.
-        perror("Server has closed the connection.");
-        exit(EXIT_FAILURE);
-    }
-
-    const char* delim = ".";
+std::vector<int> ClientStub::Order(int customer_id, int order_number, int laptop_type) const {
+    char buffer[32];
     std::vector<int> out;
-    tokenize(buffer, delim, out);
-
-    if(out.size()!=5){
-        perror("Invalid response received from server...");
-        exit(EXIT_FAILURE);
+    OrderMarshal(buffer, customer_id, order_number, laptop_type);
+    if (Send(client.socket,buffer, 12, 0)) {
+        if (Recv(client.socket,buffer, 20, 0)) {
+            out = LaptopUnmarshal(buffer);
+        }
     }
+    return out;
+
 }
 
-void ClientStub::CloseSocket() {
-    close(client.socket);
+
+void ClientStub::CloseSocket() const {
+    Close(client.socket);
 }
 
-
-
-// helpers
-void ClientStub::tokenize(char object[], const char *delim, std::vector<int> &out) {
-    char *token = strtok(object, delim);
-    while (token != nullptr)
-    {
-        out.push_back(atoi(token));
-        token = strtok(nullptr, delim);
-    }
-}
 
 void ClientStub::error_check(int item_to_test) {
     // socket functions

@@ -7,7 +7,7 @@
 #include <utility>
 #include <numeric>
 
-#define FAILED -1
+#define FAILED (-1)
 
 using namespace std::chrono;
 
@@ -23,6 +23,8 @@ void spawn_client_thread(std::string host, int port, int customer_id, int orders
     // make orders
     for (int i = 0; i < orders; i++) {
         std::vector<int> laptop = stub.Order(customer_id, i, laptop_type);
+        assert(laptop.size() == 5);
+        std::cout<<"customer: "<<customer_id<<" order: "<<i<<" processed";
         order_times_for_current_client.push_back(high_resolution_clock::now());
     }
     order_times[customer_id] = order_times_for_current_client;
@@ -31,9 +33,7 @@ void spawn_client_thread(std::string host, int port, int customer_id, int orders
     stub.CloseSocket();
 }
 
-void receive_shipment(int customer_id, int order_id, int engineer_id) {
-    receive_times[customer_id][order_id] = high_resolution_clock::now();
-}
+
 
 int main(int argc, char **argv) {
 
@@ -76,9 +76,7 @@ int main(int argc, char **argv) {
     auto const count = static_cast<float>(elapsed_times.size());
     
     //int avg = std::accumulate(elapsed_times.begin(), elapsed_times.end(), 0.0) / count;
-    int avg = 10;
-    
-    printf ("%d\t%d\t%d\t%d", avg, min, max, 100 );
+
 
     return 0;
 }

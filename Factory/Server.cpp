@@ -4,16 +4,17 @@
 
 #include "../Networking/ServerTCP.h"
 
-// take user input
-#define PORT 6969
+int main(int argc, char **argv){
 
-int main(){
+    int port = atoi(argv[1]);
     // initialize the TCP server variables.
-    Networking::ServerTCP ss = *new Networking::ServerTCP(6969);
+    Networking::ServerTCP ss = *new Networking::ServerTCP(port);
 
     // To-do initiate the Expert Engineer pool.
 
 
     // starting the server infinite loop.
     ss.start();
+
+    return 0;
 }

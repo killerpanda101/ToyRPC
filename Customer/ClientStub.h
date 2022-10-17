@@ -34,13 +34,10 @@ private:
     struct sockaddr_in address{};
     struct Client client{};
     static void error_check(int);
-    static void tokenize(char *object, const char *delim, std::vector<std::int32_t> &out);
-    void send_order(int customer_id,int order_number, int laptop_type) const;
-    std::vector<int> receive_order() const;
 public:
-    void Init(std::string ip , int port);
-    std::vector<int> Order(int customer_id, int order_number, int laptop_type);
-    void CloseSocket();
+    void Init(const std::string& ip , int port);
+    std::vector<int> Order( int customer_id, int order_number, int laptop_type) const;
+    void CloseSocket() const;
 };
 
 

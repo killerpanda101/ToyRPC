@@ -5,7 +5,7 @@
 #ifndef HELLOWORLD_SERVERSTUB_H
 #define HELLOWORLD_SERVERSTUB_H
 
-#include <stdio.h>
+#include <cstdio>
 #include <unistd.h>
 #include <vector>
 #include <sstream>
@@ -14,12 +14,11 @@
 class ServerStub {
     private:
         int client_socket;
-        static void tokenize(char object[], const char *delim, std::vector<int> &out);
 
     public:
         void Init(int);
-        std::vector<int> ReceiveOrder();
-        void ShipLaptop(int, int, int, int, int);
+        std::vector<int> ReceiveOrder() const;
+        void ShipLaptop(int, int, int, int, int) const;
 };
 
 #endif //HELLOWORLD_SERVERSTUB_H
