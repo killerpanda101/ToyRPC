@@ -38,7 +38,6 @@ std::vector<int> ClientStub::Order(int customer_id, int order_number, int laptop
         }
     }
     return out;
-
 }
 
 

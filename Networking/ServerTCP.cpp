@@ -9,7 +9,7 @@ Networking::ServerTCP::ServerTCP(int port) {
     server.service = SOCK_STREAM;
     server.protocol = 0;
     server.port = port;
-    server.backlog = 10;
+    server.backlog = 100;
 
     // create socket
     server.socket = socket(server.domain, server.service, server.protocol);
@@ -38,7 +38,6 @@ void Networking::ServerTCP::error_check(int item_to_test) {
 
 void Networking::ServerTCP::start() {
     int engineer_id=0;
-    std::vector<std::thread> thread_vector;
 
     while (true) {
         int addrlen = sizeof(address);
@@ -46,7 +45,7 @@ void Networking::ServerTCP::start() {
         int new_client = accept(server.socket, (struct sockaddr *) &address, (socklen_t *) &addrlen);
 
         std::thread t(engineer, new_client, engineer_id++);
-        thread_vector.push_back(std::move(t));
+        t.detach();
 
     }
 }

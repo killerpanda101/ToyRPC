@@ -21,9 +21,6 @@ void engineer(int connected_socket, int engineer_id){
         }
 
         assert(orderDetails.size() == 3);
-        for (int i: orderDetails)
-            std::cout << i << ' ';
-        std::cout << std::endl;
 
         // normal engineer flow
         if(orderDetails[2]==0){
@@ -40,6 +37,5 @@ void engineer(int connected_socket, int engineer_id){
             exit(EXIT_FAILURE);
         }
     }
-    std::cout<<"Engineer released"<<std::endl;
-    std::terminate();
+//    std::cout<<"Engineer "<<engineer_id<<" released"<<std::endl;
 }
