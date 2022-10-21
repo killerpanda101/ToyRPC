@@ -8,11 +8,8 @@
 #include <future>
 #include "ExpertPool.h"
 # include "ServerStub.h"
+#include "LaptopInfo.h"
 
-void expertEngineerWorkflow(){
-    std::this_thread::sleep_for(std::chrono::microseconds(100));
-    std::cout << "expert called" << std::endl;
-}
 
 void engineer(int connected_socket, int engineer_id){
 
@@ -37,8 +34,22 @@ void engineer(int connected_socket, int engineer_id){
         }
         // expert engineer flow
         else if(orderDetails[2]==1){
-            expert_pool.push(&expertEngineerWorkflow);
-            stub.ShipLaptop(orderDetails[0], orderDetails[1], orderDetails[2], engineer_id, -1);
+
+            std::promise<int> prom;
+            std::future<int> fut = prom.get_future();
+
+            std::unique_ptr<ExpertRequest> req = std::unique_ptr<ExpertRequest>(new ExpertRequest);
+            req->customer_id = orderDetails[0];
+            req->order_number = orderDetails[1];
+            req->laptop_type = orderDetails[2];
+            req->engineer_id = engineer_id;
+            req->expert_id = std::move(prom);
+
+            expert_pool.push(std::move(req));
+
+            int expert = fut.get();
+
+            stub.ShipLaptop(orderDetails[0], orderDetails[1], orderDetails[2], engineer_id, expert);
         }
         else{
             std::cout<<orderDetails[2]<<std::endl;
