@@ -36,8 +36,8 @@ void Networking::ServerTCP::error_check(int item_to_test) {
     }
 }
 
-void Networking::ServerTCP::start() {
-    int engineer_id=0;
+void Networking::ServerTCP::start(int id_start) {
+    int engineer_id=id_start;
 
     while (true) {
         int addrlen = sizeof(address);

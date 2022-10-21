@@ -45,7 +45,7 @@ namespace Networking{
         //void engineer(int client);
     public:
         explicit ServerTCP(int port);
-        void start();
+        void start(int);
     };
 }
 
