@@ -125,12 +125,57 @@ CMakeFiles/server.dir/Factory/ServerStub.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/Factory/ServerStub.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/parijatchatterjee/Desktop/ToyRPC/Factory/ServerStub.cpp -o CMakeFiles/server.dir/Factory/ServerStub.cpp.s
 
+CMakeFiles/server.dir/Networking/Message.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/Networking/Message.cpp.o: Networking/Message.cpp
+CMakeFiles/server.dir/Networking/Message.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/Networking/Message.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/Networking/Message.cpp.o -MF CMakeFiles/server.dir/Networking/Message.cpp.o.d -o CMakeFiles/server.dir/Networking/Message.cpp.o -c /Users/parijatchatterjee/Desktop/ToyRPC/Networking/Message.cpp
+
+CMakeFiles/server.dir/Networking/Message.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/Networking/Message.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/parijatchatterjee/Desktop/ToyRPC/Networking/Message.cpp > CMakeFiles/server.dir/Networking/Message.cpp.i
+
+CMakeFiles/server.dir/Networking/Message.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/Networking/Message.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/parijatchatterjee/Desktop/ToyRPC/Networking/Message.cpp -o CMakeFiles/server.dir/Networking/Message.cpp.s
+
+CMakeFiles/server.dir/Networking/SendRecv.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/Networking/SendRecv.cpp.o: Networking/SendRecv.cpp
+CMakeFiles/server.dir/Networking/SendRecv.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/server.dir/Networking/SendRecv.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/Networking/SendRecv.cpp.o -MF CMakeFiles/server.dir/Networking/SendRecv.cpp.o.d -o CMakeFiles/server.dir/Networking/SendRecv.cpp.o -c /Users/parijatchatterjee/Desktop/ToyRPC/Networking/SendRecv.cpp
+
+CMakeFiles/server.dir/Networking/SendRecv.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/Networking/SendRecv.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/parijatchatterjee/Desktop/ToyRPC/Networking/SendRecv.cpp > CMakeFiles/server.dir/Networking/SendRecv.cpp.i
+
+CMakeFiles/server.dir/Networking/SendRecv.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/Networking/SendRecv.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/parijatchatterjee/Desktop/ToyRPC/Networking/SendRecv.cpp -o CMakeFiles/server.dir/Networking/SendRecv.cpp.s
+
+CMakeFiles/server.dir/Factory/ExpertPool.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/Factory/ExpertPool.cpp.o: Factory/ExpertPool.cpp
+CMakeFiles/server.dir/Factory/ExpertPool.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/server.dir/Factory/ExpertPool.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/Factory/ExpertPool.cpp.o -MF CMakeFiles/server.dir/Factory/ExpertPool.cpp.o.d -o CMakeFiles/server.dir/Factory/ExpertPool.cpp.o -c /Users/parijatchatterjee/Desktop/ToyRPC/Factory/ExpertPool.cpp
+
+CMakeFiles/server.dir/Factory/ExpertPool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/Factory/ExpertPool.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/parijatchatterjee/Desktop/ToyRPC/Factory/ExpertPool.cpp > CMakeFiles/server.dir/Factory/ExpertPool.cpp.i
+
+CMakeFiles/server.dir/Factory/ExpertPool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/Factory/ExpertPool.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/parijatchatterjee/Desktop/ToyRPC/Factory/ExpertPool.cpp -o CMakeFiles/server.dir/Factory/ExpertPool.cpp.s
+
 # Object files for target server
 server_OBJECTS = \
 "CMakeFiles/server.dir/Factory/Server.cpp.o" \
 "CMakeFiles/server.dir/Networking/ServerTCP.cpp.o" \
 "CMakeFiles/server.dir/Factory/Engineer.cpp.o" \
-"CMakeFiles/server.dir/Factory/ServerStub.cpp.o"
+"CMakeFiles/server.dir/Factory/ServerStub.cpp.o" \
+"CMakeFiles/server.dir/Networking/Message.cpp.o" \
+"CMakeFiles/server.dir/Networking/SendRecv.cpp.o" \
+"CMakeFiles/server.dir/Factory/ExpertPool.cpp.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
@@ -139,9 +184,12 @@ server: CMakeFiles/server.dir/Factory/Server.cpp.o
 server: CMakeFiles/server.dir/Networking/ServerTCP.cpp.o
 server: CMakeFiles/server.dir/Factory/Engineer.cpp.o
 server: CMakeFiles/server.dir/Factory/ServerStub.cpp.o
+server: CMakeFiles/server.dir/Networking/Message.cpp.o
+server: CMakeFiles/server.dir/Networking/SendRecv.cpp.o
+server: CMakeFiles/server.dir/Factory/ExpertPool.cpp.o
 server: CMakeFiles/server.dir/build.make
 server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

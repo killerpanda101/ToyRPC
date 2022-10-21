@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/parijatchatterjee/Desktop/ToyRPC/Customer/Client.cpp" "CMakeFiles/client.dir/Customer/Client.cpp.o" "gcc" "CMakeFiles/client.dir/Customer/Client.cpp.o.d"
   "/Users/parijatchatterjee/Desktop/ToyRPC/Customer/ClientStub.cpp" "CMakeFiles/client.dir/Customer/ClientStub.cpp.o" "gcc" "CMakeFiles/client.dir/Customer/ClientStub.cpp.o.d"
+  "/Users/parijatchatterjee/Desktop/ToyRPC/Networking/Message.cpp" "CMakeFiles/client.dir/Networking/Message.cpp.o" "gcc" "CMakeFiles/client.dir/Networking/Message.cpp.o.d"
+  "/Users/parijatchatterjee/Desktop/ToyRPC/Networking/SendRecv.cpp" "CMakeFiles/client.dir/Networking/SendRecv.cpp.o" "gcc" "CMakeFiles/client.dir/Networking/SendRecv.cpp.o.d"
   )
 
 # Targets to which this target links.

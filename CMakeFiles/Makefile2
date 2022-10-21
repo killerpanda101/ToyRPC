@@ -63,8 +63,8 @@ CMAKE_BINARY_DIR = /Users/parijatchatterjee/Desktop/ToyRPC
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/clientStub.dir/all
-all: CMakeFiles/serverStub.dir/all
+all: CMakeFiles/client.dir/all
+all: CMakeFiles/server.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,61 +72,61 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/clientStub.dir/clean
-clean: CMakeFiles/serverStub.dir/clean
+clean: CMakeFiles/client.dir/clean
+clean: CMakeFiles/server.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/clientStub.dir
+# Target rules for target CMakeFiles/client.dir
 
 # All Build rule for target.
-CMakeFiles/clientStub.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clientStub.dir/build.make CMakeFiles/clientStub.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clientStub.dir/build.make CMakeFiles/clientStub.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles --progress-num=1,2,3 "Built target clientStub"
-.PHONY : CMakeFiles/clientStub.dir/all
+CMakeFiles/client.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles --progress-num=1,2,3,4,5 "Built target client"
+.PHONY : CMakeFiles/client.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/clientStub.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/clientStub.dir/all
+CMakeFiles/client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles 0
-.PHONY : CMakeFiles/clientStub.dir/rule
+.PHONY : CMakeFiles/client.dir/rule
 
 # Convenience name for target.
-clientStub: CMakeFiles/clientStub.dir/rule
-.PHONY : clientStub
+client: CMakeFiles/client.dir/rule
+.PHONY : client
 
 # clean rule for target.
-CMakeFiles/clientStub.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clientStub.dir/build.make CMakeFiles/clientStub.dir/clean
-.PHONY : CMakeFiles/clientStub.dir/clean
+CMakeFiles/client.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/clean
+.PHONY : CMakeFiles/client.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/serverStub.dir
+# Target rules for target CMakeFiles/server.dir
 
 # All Build rule for target.
-CMakeFiles/serverStub.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverStub.dir/build.make CMakeFiles/serverStub.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverStub.dir/build.make CMakeFiles/serverStub.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles --progress-num=4,5,6 "Built target serverStub"
-.PHONY : CMakeFiles/serverStub.dir/all
+CMakeFiles/server.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles --progress-num=6,7,8,9,10,11,12,13 "Built target server"
+.PHONY : CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/serverStub.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/serverStub.dir/all
+CMakeFiles/server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/parijatchatterjee/Desktop/ToyRPC/CMakeFiles 0
-.PHONY : CMakeFiles/serverStub.dir/rule
+.PHONY : CMakeFiles/server.dir/rule
 
 # Convenience name for target.
-serverStub: CMakeFiles/serverStub.dir/rule
-.PHONY : serverStub
+server: CMakeFiles/server.dir/rule
+.PHONY : server
 
 # clean rule for target.
-CMakeFiles/serverStub.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverStub.dir/build.make CMakeFiles/serverStub.dir/clean
-.PHONY : CMakeFiles/serverStub.dir/clean
+CMakeFiles/server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/clean
+.PHONY : CMakeFiles/server.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -7,6 +7,10 @@
 #include <utility>
 #include <numeric>
 #include <thread>
+#include <array>
+#include <iostream>
+#include <vector>
+#include <chrono>
 
 #define FAILED (-1)
 
