@@ -14,7 +14,7 @@
 void engineer(int connected_socket, int engineer_id){
 
     // make server stub
-    ServerStub stub = *new ServerStub();
+    ServerStub stub = ServerStub();
     stub.Init(connected_socket);
 
     while(true){
